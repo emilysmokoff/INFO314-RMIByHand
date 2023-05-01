@@ -26,15 +26,17 @@ public class Client {
                     RemoteMethod obj = (RemoteMethod) ois.readObject();
 
                     Object[] results = obj.getResult();
+                    fis.close();
         
                     return (Integer)results[0];
                 } catch (Exception err) {
                     err.printStackTrace();
                 }
-
+                os.close();
             } catch(IOException ex) {
                 ex.printStackTrace();
             }
+            socket.close();
         } catch (Exception err) {
             System.out.println("The server is not running, in order to run the program please start the server.");
         }
@@ -64,15 +66,17 @@ public class Client {
                     RemoteMethod obj = (RemoteMethod) ois.readObject();
 
                     Object[] results = obj.getResult();
+                    fis.close();
 
                     return (Integer)results[0];
                 } catch (Exception err) {
                     err.printStackTrace();
                 }
-
+                os.close();
             } catch(IOException ex) {
                 ex.printStackTrace();
             }
+            socket.close();
         } catch (Exception err) {
             System.out.println("The server is not running, in order to run the program please start the server.");
         }
@@ -102,15 +106,17 @@ public class Client {
                     RemoteMethod obj = (RemoteMethod) ois.readObject();
 
                     Object[] results = obj.getResult();
+                    fis.close();
 
                     return (String)results[0];
                 } catch (Exception err) {
                     err.printStackTrace();
                 }
-
+                os.close();
             } catch(IOException ex) {
                 ex.printStackTrace();
             }
+            socket.close();
         } catch (Exception err) {
             System.out.println("The server is not running, in order to run the program please start the server.");
         }

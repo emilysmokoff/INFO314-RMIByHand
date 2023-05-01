@@ -50,10 +50,12 @@ public class Server {
                 //send back the information in serialized form
                 oos.writeObject(obj);
                 oos.flush();
+
+                fos.close();
             } catch (Exception err) {
                 err.printStackTrace();
             }
-
+            fis.close();
             socket.close();
         } catch (Exception err) {
             err.printStackTrace();
